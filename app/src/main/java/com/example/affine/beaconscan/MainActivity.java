@@ -189,7 +189,22 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             scanDataModel.setRssi(String.valueOf(i));
             scanDataModel.setTx_power(String.valueOf(TxPower));
             Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
-            dataManager.sendPost(scanDataModel);
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("PQ1",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -199,12 +214,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
                 byte txpw = bytes[29];
                 System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
                 TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("1",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -214,12 +252,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("2",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -229,12 +290,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("3",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -244,12 +328,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("4",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -259,12 +366,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("5",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -274,12 +404,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("6",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -289,12 +442,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("7",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -304,12 +480,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("8",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -319,12 +518,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("9",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -334,12 +556,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("10",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -349,12 +594,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("11",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -364,12 +632,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("12",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -379,12 +670,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("13",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -394,12 +708,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("14",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -409,12 +746,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("15",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -424,12 +784,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
         else if(Strings.areEqual("16",bluetoothDevice.getName())) {
             // iBeacon indicator
@@ -439,12 +822,35 @@ public class MainActivity extends AppCompatActivity implements BleManager.LeScan
             byte txpw = bytes[29];
             System.out.println("PQ1 Major = " + major + " | Minor = " + minor + " TxPw " + (int)txpw + " | UUID = " + uuid.toString());
             TxPower = (int)txpw;
-
+            Rssi = i;
             double d = Math.pow(10d, (((double) (TxPower - Rssi)) / (10 * 2)));
             int dshow = (int) Math.round(d);
             //Log.e("raw data","advertisement data" + new String(bytes, Charset.forName("ISO-8859-1")));
             Log.e("distance","Distance of PQ1 is: " + String.valueOf(d));
             m_leDeviceListAdapter.addDevice(bluetoothDevice, Rssi,dshow);
+            ScanDataModel scanDataModel = new ScanDataModel();
+            scanDataModel.setScenario_num(scenario);
+            scanDataModel.setPoint_num(point);
+            scanDataModel.setDevice_name(bluetoothDevice.getName());
+            scanDataModel.setRssi(String.valueOf(i));
+            scanDataModel.setTx_power(String.valueOf(TxPower));
+            Log.e("Details Json: ",gson.toJson(scanDataModel,ScanDataModel.class));
+            dataManager.sendPost(scanDataModel).subscribeWith(new DefaultObserver<ResponseItem>() {
+                @Override
+                public void onNext(ResponseItem responseItem) {
+                    Log.e("Status",responseItem.getStatus());
+                }
+
+                @Override
+                public void onError(Throwable e) {
+
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
         }
 
     }

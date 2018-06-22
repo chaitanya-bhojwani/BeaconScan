@@ -56,6 +56,38 @@ public class CaptureScreen extends AppCompatActivity {
         findViewById(R.id.P28).setOnClickListener(onClickListener);
         findViewById(R.id.P29).setOnClickListener(onClickListener);
         findViewById(R.id.P30).setOnClickListener(onClickListener);
+        findViewById(R.id.P31).setOnClickListener(onClickListener);
+        findViewById(R.id.P32).setOnClickListener(onClickListener);
+        findViewById(R.id.P33).setOnClickListener(onClickListener);
+        findViewById(R.id.P34).setOnClickListener(onClickListener);
+        findViewById(R.id.P35).setOnClickListener(onClickListener);
+        findViewById(R.id.P36).setOnClickListener(onClickListener);
+        findViewById(R.id.P37).setOnClickListener(onClickListener);
+        findViewById(R.id.P38).setOnClickListener(onClickListener);
+        findViewById(R.id.P39).setOnClickListener(onClickListener);
+        findViewById(R.id.P40).setOnClickListener(onClickListener);
+        findViewById(R.id.P41).setOnClickListener(onClickListener);
+        findViewById(R.id.P42).setOnClickListener(onClickListener);
+        findViewById(R.id.P43).setOnClickListener(onClickListener);
+        findViewById(R.id.P44).setOnClickListener(onClickListener);
+        findViewById(R.id.P45).setOnClickListener(onClickListener);
+        findViewById(R.id.P46).setOnClickListener(onClickListener);
+        findViewById(R.id.P47).setOnClickListener(onClickListener);
+        findViewById(R.id.P48).setOnClickListener(onClickListener);
+        findViewById(R.id.P49).setOnClickListener(onClickListener);
+        findViewById(R.id.P50).setOnClickListener(onClickListener);
+        findViewById(R.id.P51).setOnClickListener(onClickListener);
+        findViewById(R.id.P52).setOnClickListener(onClickListener);
+        findViewById(R.id.P53).setOnClickListener(onClickListener);
+        findViewById(R.id.P54).setOnClickListener(onClickListener);
+        findViewById(R.id.P55).setOnClickListener(onClickListener);
+        findViewById(R.id.P56).setOnClickListener(onClickListener);
+        findViewById(R.id.P57).setOnClickListener(onClickListener);
+        findViewById(R.id.P58).setOnClickListener(onClickListener);
+        findViewById(R.id.P59).setOnClickListener(onClickListener);
+        findViewById(R.id.P60).setOnClickListener(onClickListener);
+        findViewById(R.id.P61).setOnClickListener(onClickListener);
+        findViewById(R.id.P62).setOnClickListener(onClickListener);
 
     }
 
